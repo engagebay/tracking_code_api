@@ -24,6 +24,8 @@
     * [Get contact](#get-contact)
     * [Update contact](#update-contact)
     * [Set contact property](#set-contact-property) 
+    * [Add tag to contact](#add-tag-to-contact)
+    * [Remove tag to contact](#remove-tag-to-contact) 
   
 ### Setting API & Analytics
 - You may access the tracking code from ***Account Settings ->  API & Tracking Code -> Tracking code***
@@ -139,17 +141,21 @@ EhAPI.push(['createContact', contact, {
 **data** parameter of the success callback function is the created contact object.
 
 ```javascript
-{success: function(data){
-	console.log(data);
-}}
+{
+	success: function(data){
+		console.log(data);
+	}
+}
 ```
 - Error data :
 **data** parameter of the error callback function provides the error message.
 
 ```javascript
-{error: function(data){
-    console.log(data.error)
-}}
+{
+	error: function(data){
+    	console.log(data.error)
+	}
+}
 ```
 
 some of the common error messages are as follows
@@ -298,4 +304,64 @@ EhAPI.push(['setProperty', property, {
 {error:"Invalid API key"}
 ```
 
+
+#### Add tag to contact
+
+Adds tag to the contact (based on email already set using ```EhAPI.push(['setEmail'```).
+```). 
+
+- Parameters : tags, callback object (optional)
+
+```javascript
+EhAPI.push(['addTag',"tag1, tag2", {
+	success: function (data) {
+        console.log("success");
+    },
+    error: function (data) {
+        console.log("error");
+    }
+}]);
+```
+- Success data : 
+
+**data** parameter of the success callback method is the updated contact object.
+
+- Error data :
+
+**data** parameter of error callback is the error object.
+
+```javascript
+{error:"Invalid API key"}
+{error: "Contact not found"}
+```
+
+#### Remove tag to contact
+
+Removes tag from the contact (based on email already set using ```EhAPI.push(['setEmail'```).
+```). 
+
+- Parameters : tags, callback object (optional)
+
+```javascript
+EhAPI.push(['deleteTag',"tag1, tag2", {
+	success: function (data) {
+        console.log("success");
+    },
+    error: function (data) {
+        console.log("error");
+    }
+}]);
+```
+- Success data : 
+
+**data** parameter of the success callback method is the updated contact object.
+
+- Error data :
+
+**data** parameter of error callback is the error object.
+
+```javascript
+{error:"Invalid API key"}
+{error: "Contact not found"}
+```
 
