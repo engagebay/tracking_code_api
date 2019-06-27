@@ -82,14 +82,14 @@ To get the email of visitor (whose email was already set earlier)
 - Parameters : callback object
 
 ```javascript
-EhAPI.get('email', {
+EhAPI.push(['getEmail', {
     success: function(data){
         console.log(data.email);
     },
     error: function(data){
         console.log(data.error);
     }
-})
+}])
 ```
 - Success data :
 
@@ -103,5 +103,199 @@ It is possible to track a vistor on multiple subdomains of your site. i.e www.my
 When this is used, visitor email that is set using push(['email', 'visitor@emaildomain.com']) on one of your sites, can be accessed using the get('email', {}) on the other sites (subdomains).
 
 
+### 2.Contact
+Format of the contact object is as follows
+
+#### Create Contact
+
+Contact properties to create contact are :
+
+**first_name**, **last_name**, **email**, **website**, **role**, **tags**, **phone**.
+
+- Parameters : contact, callback object (optional)
+
+```javascript
+var contact = {};
+contact.first_name = "JS test";
+contact.last_name = "Contact";
+contact.email = "contact@domain.com";
+contact.role = "lead";
+contact.phone = "+1-541-754-3010";
+contact.website = "http://www.example.com";
+contact.tags = "tag1, tag2";
+
+// Custom fields can be added to contact object as
+contact.custom_field_name = "EN001C";
+EhAPI.push(['createContact', contact, {
+    success: function (data) {
+        console.log("success");
+    },
+    error: function (data) {
+        console.log("error");
+    }
+}]);
+```
+- Success data :
+**data** parameter of the success callback function is the created contact object.
+
+```javascript
+{success: function(data){
+	console.log(data);
+}}
+```
+- Error data :
+**data** parameter of the error callback function provides the error message.
+
+```javascript
+{error: function(data){
+    console.log(data.error)
+}}
+```
+
+some of the common error messages are as follows
+    
+    - Duplicate found for "test@contact.com"
+    - Invalid API key
+    - Invalid parameter
+    - Contacts limit reached
+    - API key missing
+
+#### 2.2 Get Contact
+
+Contact can be searched (based on email already set using ```EhAPI.push(['setContact'```).
+
+- Parameters : contact email, callback object (optional)
+
+```javascript
+EhAPI.push(['getContact', "contact@test.com", {
+    success: function (data) {
+        console.log("success");
+    },
+    error: function (data) {
+        console.log("error");
+    }
+}]);
+```
+- Success data :
+
+**data** parameter of the success function returns the contact object.
+
+- Error data :
+
+**data** parameter of the error callback provides the error message for failed API call.
+```javascript
+error: function(data){
+    console.log(data.error);
+}
+```
+
+some of the common error messages are as follows
+
+    - Contact not found
+    - Invalid API key
+    - API key missing
+
+#### 2.3 Update Contact
+
+Updates the contact with given JSON data (based on email already set using ```EhAPI.push(['setEmail'```).
+
+- Parameters : contact data, callback object (optional)
+
+```javascript
+EhAPI.push(['updateContact',{
+    "title": "lead",
+    "website": "http://www.example.com"
+	}, {
+    success: function (data) {
+        console.log("success");
+    },
+    error: function (data) {
+        console.log("error");
+    }
+}]);
+```
+- Success data :
+
+**data** parameter of success callback is the updated contact object.
+
+- Error data :
+
+**data** parameter of error callback provides the error message object.
+
+```javascript
+{error: "Contact not found"}
+{error:"Invalid API key"}
+```
+
+#### 2.4 Set Contact Property
+
+To add new or update existing contact property (*first_name*, *last_name*, *role*, *website*, *phone*) or any CUSTOM contact property (based on email already set using ```EhAPI.push(['setEmail'```).
+
+
+- Parameters : property, callback object (optional)
+
+```javascript
+var property = {};
+property.name = "abc account";
+property.value = "premium";
+
+EhAPI.push(['setProperty', property, {
+    success: function (data) {
+        console.log("success");
+    },
+    error: function (data) {
+        console.log("error");
+    }
+}]);
+```
+
+Some fields are multi-valued and have **type**. For example, *email* can be of type *primary* or *secondary*. 
+
+To set the type, property object must have an additional attribute **type** like
+```property.type = "work";```. If you pass JSON directly then you need to include an additional key value pair like
+
+```json
+{
+    "name": "field_name",
+	"value": "field_value",
+	"type": "field_type"
+}
+```
+The list of possible **type** for various fields are as mentioned below:
+- email \- primary | secondary
+
+- phone \- work | home | work |other
+
+- website \- website | skype | twitter | linkedin | facebook | xing | blog | google+ | flickr | github | youtube
+
+Below is an example API call to add / replace (if exists) office address to a contact (based on email already set using ```EhAPI.push(['setEmail'```).
+
+```javascript
+var property = {};
+property.name = "email";
+property.value = 'visitor@emaildomain.com';
+property.type = "primary";
+
+EhAPI.push(['setProperty', property, {
+    success: function (data) {
+        console.log("success");
+    },
+    error: function (data) {
+        console.log("error");
+    }
+}]);
+```
+- Success data : 
+
+**data** parameter of success callback is the updated contact object.
+
+- Error data :
+
+**data** parameter of error callback provides the error message object.
+
+```javascript
+{error: "Contact not found"}
+{error:"Invalid API key"}
+```
 
 
