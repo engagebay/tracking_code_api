@@ -17,7 +17,13 @@
   * [1 Tracking website visitors](#1tracking-website-visitors)
     * [Setting Email of the page visitor](#setting-email-of-the-page-visitor)
     * [Get Email](#get-email)
-    * [Tracking across multiple sites](#tracking-across-multiple-sites)  
+    * [Tracking across multiple sites](#tracking-across-multiple-sites) 
+
+  * [2 Contact](#2contact)
+    * [Create contact](#create-contactr)
+    * [Get contact](#get-contact)
+    * [Update contact](#update-contact)
+    * [Set contact property](#set-contact-property) 
   
 ### Setting API & Analytics
 - You may access the tracking code from ***Account Settings ->  API & Tracking Code -> Tracking code***
