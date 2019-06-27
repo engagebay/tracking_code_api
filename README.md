@@ -14,7 +14,7 @@
   * [Override email](#override-email)
 
 **[Supporting API](#supporting-api)**
-  * [1 Tracking website visitors](#1-tracking-contacts)
+  * [1 Tracking website visitors](#1tracking-website-visitors)
     * [Setting Email of the page visitor](#setting-email-of-the-page-visitor)
     * [Get Email](#get-email)
     * [Tracking across multiple sites](#tracking-across-multiple-sites)  
