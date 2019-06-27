@@ -160,7 +160,7 @@ some of the common error messages are as follows
     - Contacts limit reached
     - API key missing
 
-#### 2.2 Get Contact
+#### Get Contact
 
 Contact can be searched (based on email already set using ```EhAPI.push(['setContact'```).
 
@@ -195,7 +195,7 @@ some of the common error messages are as follows
     - Invalid API key
     - API key missing
 
-#### 2.3 Update Contact
+#### Update Contact
 
 Updates the contact with given JSON data (based on email already set using ```EhAPI.push(['setEmail'```).
 
@@ -227,7 +227,7 @@ EhAPI.push(['updateContact',{
 {error:"Invalid API key"}
 ```
 
-#### 2.4 Set Contact Property
+#### Set Contact Property
 
 To add new or update existing contact property (*first_name*, *last_name*, *role*, *website*, *phone*) or any CUSTOM contact property (based on email already set using ```EhAPI.push(['setEmail'```).
 
