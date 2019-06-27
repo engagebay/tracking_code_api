@@ -1,0 +1,50 @@
+
+<!DOCTYPE html>
+
+<html>
+    <head>
+        <meta http-equiv="Content-Type" content="text/html; charset=utf-8" >
+    </head>
+    <body>
+         <h1>Create Contact and Track it</h1>
+         <h4>Please run this code at some server : (Ex: XAMPP | WAMP | TOMCAT)</h4>
+         
+        <form name="create_contact_track">
+            First Name : <input type='text' name = "first_name" id = "f_name" ><br/>
+            Last  Name : <input type='text' name = "first_name" id = "l_name" ><br/>
+            Email      : <input type='email' name = "first_name" id = "email" ><br/><br/>
+            <input type="button" value="Create Contact in EngageBay" onclick = "createContact()">
+        </form>	
+        
+        <script>
+            function createContact() {
+                var email_received = document.getElementById('email').value;
+
+                var contact = {};
+                contact.email = email_received;
+                contact.first_name = document.getElementById('f_name').value;
+                contact.last_name = document.getElementById('l_name').value
+                contact.role = "Lead";
+                contact.phone = "+1-541-754-3010";
+                contact.website = "http://www.example.com";
+                contact.tags = "tag1, tag2";
+
+                // Custom fields can be added to contact object as
+                contact.custom_field = "CUSTOM Value";
+
+                EhAPI.push(['createContact', contact, {
+                    success: function (data) {
+                        // Set Email at success of contact creation. But you can set it at failure too.
+                        alert("Success");
+                        EhAPI.push(['setEmail', email_received];
+                        console.log("Contact ", data);
+                    },
+                    error: function (data) {
+                        alert("error");
+                        console.log("error ", data);
+                    }
+                }]);
+            }
+        </script>
+    </body>
+</html>

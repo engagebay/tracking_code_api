@@ -426,3 +426,7 @@ EhAPI.push(['getScore', {
 {error: "Contact not found"}
 {error:"Invalid API key"}
 ```
+
+## Help
+
+You may refer to [new_contact.html](https://github.com/peteraccountbox/tracking_code_api/blob/master/new_contact.html) for example implementation of createContact API method. 
