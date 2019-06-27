@@ -25,7 +25,6 @@
     * [Update contact](#update-contact)
     * [Set contact property](#set-contact-property) 
     * [Add tag to contact](#add-tag-to-contact)
-    * [Remove tag from contact](#remove-tag-to-contact) 
     * [Add score](#add-score)
     * [Get score](#get-score)
   
@@ -264,7 +263,7 @@ To set the type, property object must have an additional attribute **type** like
 
 ```json
 {
-    "name": "field_name",
+     "name": "field_name",
 	"value": "field_value",
 	"type": "field_type"
 }
@@ -282,7 +281,7 @@ Below is an example API call to add / replace (if exists) office address to a co
 var property = {};
 property.name = "email";
 property.value = 'visitor@emaildomain.com';
-property.type = "primary";
+property.subtype = "primary";
 
 EhAPI.push(['setProperty', property, {
     success: function (data) {
@@ -310,7 +309,6 @@ EhAPI.push(['setProperty', property, {
 #### Add tag to contact
 
 Adds tag to the contact (based on email already set using ```EhAPI.push(['setEmail'```).
-```). 
 
 - Parameters : tags, callback object (optional)
 
@@ -337,35 +335,6 @@ EhAPI.push(['addTag',"tag1, tag2", {
 {error: "Contact not found"}
 ```
 
-#### Remove tag from contact
-
-Removes tag from the contact (based on email already set using ```EhAPI.push(['setEmail'```).
-```). 
-
-- Parameters : tags, callback object (optional)
-
-```javascript
-EhAPI.push(['deleteTag',"tag1, tag2", {
-	success: function (data) {
-        console.log("success");
-    },
-    error: function (data) {
-        console.log("error");
-    }
-}]);
-```
-- Success data : 
-
-**data** parameter of the success callback method is the updated contact object.
-
-- Error data :
-
-**data** parameter of error callback is the error object.
-
-```javascript
-{error:"Invalid API key"}
-{error: "Contact not found"}
-```
 #### Add Score
 
 Add score to contact (based on email already set using ```EhAPI.push(['setEmail'```).
