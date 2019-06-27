@@ -30,7 +30,7 @@ Identify a visitor. This function can be used to identify a visitor by email add
 	EhAPI.push(["setEmail", 'visitor@email.com']);
 	
   
-### Tacking page views
+### Tracking page views
 
 Track a page view. This function is called when the tracking code is loaded on a page, but you can manually call this function to track subsequent views in a single page application.
 
