@@ -25,7 +25,9 @@
     * [Update contact](#update-contact)
     * [Set contact property](#set-contact-property) 
     * [Add tag to contact](#add-tag-to-contact)
-    * [Remove tag to contact](#remove-tag-to-contact) 
+    * [Remove tag from contact](#remove-tag-to-contact) 
+    * [Add score](#add-score)
+    * [Get score](#get-score)
   
 ### Setting API & Analytics
 - You may access the tracking code from ***Account Settings ->  API & Tracking Code -> Tracking code***
@@ -335,7 +337,7 @@ EhAPI.push(['addTag',"tag1, tag2", {
 {error: "Contact not found"}
 ```
 
-#### Remove tag to contact
+#### Remove tag from contact
 
 Removes tag from the contact (based on email already set using ```EhAPI.push(['setEmail'```).
 ```). 
@@ -364,4 +366,63 @@ EhAPI.push(['deleteTag',"tag1, tag2", {
 {error:"Invalid API key"}
 {error: "Contact not found"}
 ```
+#### Add Score
 
+Add score to contact (based on email already set using ```EhAPI.push(['setEmail'```).
+
+- Parameters : score, callback object (optional)
+
+```javascript
+EhAPI.push(['addScore', 50, {
+    success: function (data) {
+        console.log("success");
+    },
+    error: function (data) {
+        console.log("error");
+    }
+}]);
+```
+- Success data : 
+
+**data** parameter of the success callback method is the updated contact object.
+
+- Error data :
+
+**data** parameter of error callback is the error object.
+
+```javascript
+{error: "Contact not found"}
+{error:"Invalid API key"}
+```
+
+#### 4.2 Get Score
+
+Get score associated with contact (based on email already set using ```EhAPI.push(['setEmail'```).
+
+- Parameters : callback object (optional)
+
+```javascript
+EhAPI.push(['getScore', {
+    success: function (data) {
+        console.log("success");
+    },
+    error: function (data) {
+        console.log("error");
+    }
+}]);
+```
+- Success data : 
+
+**data** parameter of the success callback is the updated score.
+
+```javascript
+10
+```
+- Error data :
+
+**data** parameter of error callback is the error object. Message can be accessed as data.error
+
+```javascript
+{error: "Contact not found"}
+{error:"Invalid API key"}
+```
