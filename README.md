@@ -22,7 +22,7 @@
 
 ## Things to know
 
-###Identity a visitor
+### Identity a visitor
 
 Identify a visitor. This function can be used to identify a visitor by email address.  If there is an existing contact record with a matching email address, the existing contact will be updated.  Otherwise, a new contact record will be created.  In both cases, the page views data collected for the visitor will be associated with the contact record.
 
@@ -30,7 +30,7 @@ Identify a visitor. This function can be used to identify a visitor by email add
 	EhAPI.push(["setEmail", 'visitor@email.com']);
 	
   
-###Tacking page views
+### Tacking page views
 
 Track a page view. This function is called when the tracking code is loaded on a page, but you can manually call this function to track subsequent views in a single page application.
 
@@ -41,7 +41,7 @@ This function does not support any arguments.
 
 EngageBay tracks the page views for each session for each contact. The visitor is tracked as anonymous unless a setEmail is done. The correct step is to setEmail and then trackPageView. Anonymous users are tracked and backtracked when a user email is added using setEmail. All the old page views are attributed to the new email address. This is often the case where the user browses many sessions and then signups for your product or provides the email in the landing pages during product download.
 
-###Override email
+### Override email
 
 If a new email address is provided, EngageBay treats them as a new user and the sessions are tracked for the new user. The old page views are still valid for the old email and can be accessed from EngageBay dashboard.
 
