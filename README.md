@@ -11,6 +11,7 @@
 **[Things to know](#things-to-know)**
   * [Identify a visitor](#identify-a-visitor)
   * [Tracking page views](#tracking-page-views)
+  * [Override email](#override-email)
   
   
 ### Setting API & Analytics
@@ -21,7 +22,7 @@
 
 ## Things to know
 
-### Identity a visitor
+### Identify a visitor
 
 Identify a visitor. This function can be used to identify a visitor by email address.  If there is an existing contact record with a matching email address, the existing contact will be updated.  Otherwise, a new contact record will be created.  In both cases, the page views data collected for the visitor will be associated with the contact record.
 
