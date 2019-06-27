@@ -395,7 +395,7 @@ EhAPI.push(['addScore', 50, {
 {error:"Invalid API key"}
 ```
 
-#### 4.2 Get Score
+#### Get Score
 
 Get score associated with contact (based on email already set using ```EhAPI.push(['setEmail'```).
 
