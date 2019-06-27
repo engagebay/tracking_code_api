@@ -20,7 +20,7 @@
     * [Tracking across multiple sites](#tracking-across-multiple-sites) 
 
   * [2 Contact](#2contact)
-    * [Create contact](#create-contactr)
+    * [Create contact](#create-contact)
     * [Get contact](#get-contact)
     * [Update contact](#update-contact)
     * [Set contact property](#set-contact-property) 
