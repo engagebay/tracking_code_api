@@ -11,7 +11,6 @@
 **[Things to know](#things-to-know)**
   * [Identify a visitor](#identify-a-visitor)
   * [Tracking page views](#tracking-page-views)
-  * [Override email](#override-email)
   
   
 ### Setting API & Analytics
