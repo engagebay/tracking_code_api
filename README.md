@@ -1,4 +1,4 @@
-# EngageBay Javacript API
+# EngageBay Javascript API
  [EngageBay](https://www.engagebay.com "EngageBay") is a simple, affordable all-in-one marketing and sales software built for growing businesses. Get the power of an enterprise software at a fraction of the cost.
 
 ![](https://raw.githubusercontent.com/peteraccountbox/tracking_code_api/master/assets/engagebay-logo2.png)
