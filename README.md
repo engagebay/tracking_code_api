@@ -1,20 +1,20 @@
 # EngageBay Javascript API
- [EngageBay](https://www.engagebay.com "EngageBay") is a simple, affordable all-in-one marketing and sales software built for growing businesses. Get the power of an enterprise software at a fraction of the cost.
+ [EngageBay](https://www.engagebay.com "EngageBay") is a simple, affordable all-in-one marketing, CRM, sales and support software built for growing businesses. One can get the power of an enterprise software at a fraction of the cost.
 
 ![](https://raw.githubusercontent.com/peteraccountbox/tracking_code_api/master/assets/engagebay-logo2.png)
 
 **Table of Contents**
 
 **[API Setup](#setting-api--analytics)**
-  * [JS API & Tracking code installation](#setting-api--analytics)
+  * [Installation of JS API & Tracking code](#setting-api--analytics)
   
-**[Things to know](#things-to-know)**
-  * [Identify a visitor](#identify-a-visitor)
-  * [Tracking page views](#tracking-page-views)
-  * [Override email](#override-email)
+**[Key features](#things-to-know)**
+  * [Web visitor identification](#identify-a-visitor)
+  * [Page view tracking](#tracking-page-views)
+  * [Email overrides](#override-email)
 
 **[Supporting API](#supporting-api)**
-  * [1 Tracking website visitors](#1tracking-website-visitors)
+  * [1 Track website visitors](#1tracking-website-visitors)
     * [Setting Email of the page visitor](#setting-email-of-the-page-visitor)
     * [Get Email](#get-email)
     * [Tracking across multiple sites](#tracking-across-multiple-sites) 
@@ -28,23 +28,23 @@
     * [Add score](#add-score)
     * [Get score](#get-score)
   
-### Setting API & Analytics
-- You may access the tracking code from ***Account Settings ->  API & Tracking Code -> Tracking code***
-- Copy the 9 lines of script and paste in it in your webpage's HTML just before the ```</body>``` tag, for which you need API methods and /or tracking the page visits.
+### API & Analytics Setup
+- Get your API & Analytics tracking code from ***Account Settings ->  API & Tracking Code -> Tracking code***
+- Copy the script entirely (all the lines) and paste it in your webpage's HTML code before the ```</body>``` tag. This is mandatory for the API methods and/or tracking to work properly.
 
 ![Finding Analytics Code](https://raw.githubusercontent.com/peteraccountbox/tracking_code_api/master/assets/api-code2.jpg)
 
-## Things to know
+## Key features
 
-### Identify a visitor
+### Web visitor identification
 
-Identify a visitor. This function can be used to identify a visitor by email address.  If there is an existing contact record with a matching email address, the existing contact will be updated. The page views data collected for the visitor will be associated with the contact record.
+Identify a visitor. This function can be used to identify a visitor by their email address.  If there is an existing contact in EngageBay associated with the matching email address, the existing contact will be updated. Accordingly, all the page views data collected for the visitor will be associated with the contact record.
 
 
 	EhAPI.push(["setEmail", 'visitor@emaildomain.com']);
 	
   
-### Tracking page views
+### Page views tracking
 
 Track a page view. This function is called when the tracking code is loaded on a page, but you can manually call this function to track subsequent views in a single page application.
 
