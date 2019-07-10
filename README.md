@@ -13,11 +13,11 @@
   * [Page view tracking](#tracking-page-views)
   * [Email overrides](#override-email)
 
-**[Supporting API](#supporting-api)**
+**[API support](#supporting-api)**
   * [1 Track website visitors](#1tracking-website-visitors)
-    * [Setting Email of the page visitor](#setting-email-of-the-page-visitor)
+    * [Set Email address of the page visitor](#setting-email-of-the-page-visitor)
     * [Get Email](#get-email)
-    * [Tracking across multiple sites](#tracking-across-multiple-sites) 
+    * [Track visitor across multiple sites](#tracking-across-multiple-sites) 
 
   * [2 Contact](#2contact)
     * [Create contact](#create-contact)
@@ -46,28 +46,33 @@ Identify a visitor. This function can be used to identify a visitor by their ema
   
 ### Page views tracking
 
-Track a page view. This function is called when the tracking code is loaded on a page, but you can manually call this function to track subsequent views in a single page application.
+Track a page view. This function is automatically called when the tracking code is loaded on a webpage. You can call this function manually to track subsequent views in a single page application.
 
 	EhAPI.push(["trackPageView"]);
 	
 
 This function does not support any arguments.
 
-EngageBay tracks the page views for each session for each contact. The visitor is tracked as anonymous unless a setEmail is done. The correct step is to setEmail and then trackPageView. Anonymous users are tracked and backtracked when a user email is added using setEmail. All the old page views are attributed to the new email address. This is often the case where the user browses many sessions and then signups for your product or provides the email in the landing pages during product download.
+EngageBay tracks the page views for each session for each contact. The visitor is tracked as anonymous unless you set an email for the visitor (using setEmail). The recommended way to track known customers is setup the email (using setEmail) and then track the web activity (using trackPageView). 
 
-### Override email
+Once an email is set, the past activity (tracked as anonymous before) of the contact will be automatically attributed to the new email address. This is often the case where the user browses your website several times over a period of time before signing up for your product or provides the email in one of your landing pages while downloading your product information or a case study or a white paper.
 
-If a new email address is provided, EngageBay treats them as a new user and the sessions are tracked for the new user. The old page views are still valid for the old email and can be accessed from EngageBay dashboard.
+### Email override
+
+If a new email address is provided, EngageBay treats them as a new contact and the sessions are tracked afresh for this new contact. The old page views are still available for the previous email address and can be accessed from your EngageBay dashboard.
 
 
-## Supporting API
+## API support
 
-API can be used to sync data from your website/app to EngageBay.
+Sync the data between your website/app and EngageBay using our API calls.
 
-## 1.Tracking website visitors
-EngageBay tracks the page views for each session for each contact. The visitor is tracked as anonymous unless a setEmail is done. The correct step is to setEmail and then trackPageView. Anonymous users are tracked and backtracked when a user email is added using setEmail. All the old page views are attributed to the new email address. This is often the case where the user browses many sessions and then signups for your product or provides the email in the landing pages during product download.
+## 1.Track website visitors
+
+EngageBay tracks the page views for each session for each contact. The visitor is tracked as anonymous unless you set an email for the visitor (using setEmail). The recommended way to track known customers is setup the email (using setEmail) and then track the web activity (using trackPageView). 
+
+Once an email is set, the past activity (tracked as anonymous before) of the contact will be automatically attributed to the new email address. This is often the case where the user browses your website several times over a period of time before signing up for your product or provides the email in one of your landing pages while downloading your product information or a case study or a white paper.
 	
-#### Setting Email of the page visitor
+#### Set Email address of the page visitor
 
 To set the tracking cookie for the visitor, use the API call below
 
@@ -76,11 +81,10 @@ To set the tracking cookie for the visitor, use the API call below
 ```javascript
 EhAPI.push(["setEmail", 'visitor@email.com']);
 ```
-
 **Note: This call is mandatory for API calls to work. They all use the email address set here to add/update the contact info and associated data.**
 
 #### Get Email
-To get the email of visitor (whose email was already set earlier)
+Get the email of visitor (whose email was already set earlier)
 
 - Parameters : callback object
 
@@ -98,12 +102,12 @@ EhAPI.push(['getEmail', {
 
 visitor@emaildomain.com
 
-### Tracking across multiple sites
+### Track visitor across multiple sites
 It is possible to track a vistor on multiple subdomains of your site. i.e www.mysite.com and abc.mysite.com. 
 
 	EhAPI.push(["setTrackDomain", 'mysite.com']);
 
-When this is used, visitor email that is set using push(['email', 'visitor@emaildomain.com']) on one of your sites, can be accessed using the get('email', {}) on the other sites (subdomains).
+When this is used, visitor email that is set using push(['email', 'visitor@emaildomain.com']) on one of your sites can be accessed using the get('email', {}) on other sites (subdomains).
 
 
 ### 2.Contact
@@ -275,7 +279,7 @@ The list of possible **type** for various fields are as mentioned below:
 
 - website \- website | skype | twitter | linkedin | facebook | xing | blog | google+ | flickr | github | youtube
 
-Below is an example API call to add / replace (if exists) office address to a contact (based on email already set using ```EhAPI.push(['setEmail'```).
+Below is an example API call to add/replace (if exists) office address to a contact (based on email already set using ```EhAPI.push(['setEmail'```).
 
 ```javascript
 var property = {};
@@ -306,9 +310,9 @@ EhAPI.push(['setProperty', property, {
 ```
 
 
-#### Add tag to contact
+#### Add a tag to a contact
 
-Adds tag to the contact (based on email already set using ```EhAPI.push(['setEmail'```).
+Adds tag to a contact (based on email already set using ```EhAPI.push(['setEmail'```).
 
 - Parameters : tags, callback object (optional)
 
@@ -335,9 +339,9 @@ EhAPI.push(['addTag',"tag1, tag2", {
 {error: "Contact not found"}
 ```
 
-#### Add Score
+#### Add score
 
-Add score to contact (based on email already set using ```EhAPI.push(['setEmail'```).
+Add score to a contact (based on email already set using ```EhAPI.push(['setEmail'```).
 
 - Parameters : score, callback object (optional)
 
@@ -364,7 +368,7 @@ EhAPI.push(['addScore', 50, {
 {error:"Invalid API key"}
 ```
 
-#### Get Score
+#### Get score
 
 Get score associated with contact (based on email already set using ```EhAPI.push(['setEmail'```).
 
