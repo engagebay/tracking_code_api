@@ -9,22 +9,22 @@
   * [Installation of JS API & Tracking code](#setting-api--analytics)
   
 **[Key features](#things-to-know)**
-  * [Web visitor identification](#identify-a-visitor)
-  * [Page view tracking](#tracking-page-views)
-  * [Email overrides](#override-email)
+  * [Web visitor identification](#web-visitor-identification)
+  * [Page view tracking](#page-views-tracking)
+  * [Email overrides](#email-override)
 
-**[API support](#supporting-api)**
-  * [1 Track website visitors](#1tracking-website-visitors)
-    * [Set Email address of the page visitor](#setting-email-of-the-page-visitor)
+**[API support](#api-support)**
+  * [1 Track website visitors](#1track-website-visitorss)
+    * [Set Email address of the page visitor](#set-email-address-of-the-page-visitor)
     * [Get Email](#get-email)
-    * [Track visitor across multiple sites](#tracking-across-multiple-sites) 
+    * [Track visitor across multiple sites](#track-visitor-across-multiple-sites) 
 
   * [2 Contact](#2contact)
     * [Create contact](#create-contact)
     * [Get contact](#get-contact)
     * [Update contact](#update-contact)
     * [Set contact property](#set-contact-property) 
-    * [Add tag to contact](#add-tag-to-contact)
+    * [Add tag to contact](#add-a-tag-to-a-contact)
     * [Add score](#add-score)
     * [Get score](#get-score)
   
