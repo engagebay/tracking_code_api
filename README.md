@@ -5,10 +5,10 @@
 
 **Table of Contents**
 
-**[API Setup](#setting-api--analytics)**
-  * [Installation of JS API & Tracking code](#setting-api--analytics)
+**[API Setup](#api--analytics-setup)**
+  * [Installation of JS API & Tracking code](#api--analytics-setup)
   
-**[Key features](#things-to-know)**
+**[Key features](#key-features)**
   * [Web visitor identification](#web-visitor-identification)
   * [Page view tracking](#page-views-tracking)
   * [Email overrides](#email-override)
