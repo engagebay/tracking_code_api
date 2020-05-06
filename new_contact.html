@@ -27,7 +27,7 @@
                 contact.role = "Lead";
                 contact.phone = "+1-541-754-3010";
                 contact.website = "http://www.example.com";
-                contact.tags = "tag1, tag2";
+                contact.tags = "tag1";
 
                 // Custom fields can be added to contact object as
                 contact.custom_field = "CUSTOM Value";
@@ -36,7 +36,7 @@
                     success: function (data) {
                         // Set Email at success of contact creation. But you can set it at failure too.
                         alert("Success");
-                        EhAPI.push(['setEmail', email_received];
+                        EhAPI.push(['setEmail', email_received]);
                         console.log("Contact ", data);
                     },
                     error: function (data) {
