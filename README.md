@@ -308,36 +308,6 @@ EhAPI.push(['setProperty', property, {
 {error:"Invalid API key"}
 ```
 
-
-#### Add a tag to a contact
-
-Adds tag to a contact (based on email already set using ```EhAPI.push(['setEmail'```).
-
-- Parameters : tags, callback object (optional)
-
-```javascript
-EhAPI.push(['addTag',"tag1, tag2", {
-	success: function (data) {
-        console.log("success");
-    },
-    error: function (data) {
-        console.log("error");
-    }
-}]);
-```
-- Success data : 
-
-**data** parameter of the success callback method is the updated contact object.
-
-- Error data :
-
-**data** parameter of error callback is the error object.
-
-```javascript
-{error:"Invalid API key"}
-{error: "Contact not found"}
-```
-
 #### Add score
 
 Add score to a contact (based on email already set using ```EhAPI.push(['setEmail'```).
