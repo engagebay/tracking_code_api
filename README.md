@@ -24,7 +24,6 @@
     * [Get contact](#get-contact)
     * [Update contact](#update-contact)
     * [Set contact property](#set-contact-property) 
-    * [Add tag to contact](#add-a-tag-to-a-contact)
     * [Add score](#add-score)
     * [Get score](#get-score)
   
