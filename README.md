@@ -27,6 +27,9 @@
     * [Add score](#add-score)
     * [Get score](#get-score)
   
+  * [3 Events](#3events)
+    * [Push event](#push-event)
+
 ### API & Analytics Setup
 - Get your API & Analytics tracking code from ***Account Settings ->  API & Tracking Code -> Tracking code***
 - Copy the script entirely (all the lines) and paste it in your webpage's HTML code before the ```</body>``` tag. This is mandatory for the API methods and/or tracking to work properly.
@@ -374,4 +377,9 @@ EhAPI.push(['getScore', {
 You may refer to [new_contact.html](https://github.com/peteraccountbox/tracking_code_api/blob/master/new_contact.html) for example implementation of createContact API method. 
 
 
-Test content
+### 3. Events
+It is possible to push engagebay event to a vistor/contact from your site. You can pass meta data of any data type. For example, use the following event command to indicate that a user has signed in using their Google account login: 
+
+	EhAPI.push(["pushEvent", {event: "login", payload: {"name": "Govind", "email": "govind@engagebay.com"}}]);
+
+The event name(login) should be configured in EngageBay account. You can find this ***Marketing ->  3dots menu -> Web Tracking Events***
