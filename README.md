@@ -380,13 +380,13 @@ You may refer to [new_contact.html](https://github.com/peteraccountbox/tracking_
 ### 3.Events
 In short, an Event tracks a user’s interaction with a web page. EngageBay Analytics generally tracks Page View hits, which means a user lands on the page and EngageBay records it. However, we all know that a user does not just land on a page and then move to a new one. They click things, hover over things, see pop-ups and so on; but Engaga=eBay doesn’t track these ‘interactions’. Whilst the list of interactions on a page are endless, examples are:
 
-Download a file
-Press Play/Pause/Stop on a video
-Add a product to a basket
-Sort a list of products by a certain parameter
-Click on a button
-Click on the chat functionality
-Submit a form
+* Download a file
+* Press Play/Pause/Stop on a video
+* Add a product to a basket
+* Sort a list of products by a certain parameter
+* Click on a button
+* Click on the chat functionality
+* Submit a form
 
 #### Push event
 It is possible to push engagebay event to a vistor/contact from your site. You can pass meta data of any data type. For example, use the following event command to indicate that a user has signed in using their Google account login: 
