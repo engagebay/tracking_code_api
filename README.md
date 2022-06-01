@@ -391,6 +391,6 @@ In short, an Event tracks a user’s interaction with a web page. EngageBay Anal
 #### Push event
 It is possible to push engagebay event to a vistor/contact from your site. You can pass meta data of any data type. For example, use the following event command to indicate that a user has signed in using their Google account login: 
 
-	EhAPI.push(["pushEvent", {event: "login", payload: {"name": "Visitor", "email": "one@domain.com"}}]);
+	EhAPI.push(["pushEvent", {event: "login", payload: {"name": "visitor name", "email": "someone@example.com"}}]);
 
 The event name(login) should be configured in EngageBay account. You can find this ***Marketing ->  3dots menu -> Web Tracking Events***
